@@ -11,18 +11,15 @@
       text-align: center;
       margin: 0;
       height: 100vh;
-      /* Use the direct GIF URL as background */
-      background: url('https://media.tenor.com/gP7Lr1gChX4AAAAC/pantalone-genshin-impact.gif') center center / cover no-repeat fixed;
+      background: url('https://i.imgur.com/dJJVQrE.gif') center center / cover no-repeat fixed;
       color: #fff;
-      /* Optional: add a dark overlay for better text contrast */
       position: relative;
     }
-    /* Overlay for better contrast */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.5); /* semi-transparent black overlay */
+      background: rgba(0,0,0,0.5);
       z-index: 0;
     }
     #container {
@@ -51,36 +48,23 @@
   <script>
     // Set your countdown target date here (YYYY-MM-DDTHH:MM:SS format)
     const targetDate = new Date('2026-07-22T00:00:00');
-
     function updateCountdown() {
       const now = new Date();
       const difference = targetDate - now;
-
       if (difference <= 0) {
         document.getElementById('countdown').textContent = "Countdown Complete!";
         clearInterval(timerInterval);
         return;
       }
-
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((difference / (1000 * 60)) % 60);
       const seconds = Math.floor((difference / 1000) % 60);
-
       document.getElementById('countdown').textContent =
         `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
-
-    updateCountdown(); // Initial call
+    updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
   </script>
-
-  <!-- Optional: Embed Tenor widget below, not as background
-  <div class="tenor-gif-embed" data-postid="27324149" data-share-method="host" data-aspect-ratio="1.84971" data-width="100%">
-    <a href="https://tenor.com/view/pantalone-genshin-impact-gif-27324149">Pantalone Genshin Impact GIF</a>
-    from <a href="https://tenor.com/search/pantalone-gifs">Pantalone GIFs</a>
-  </div>
-  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-  -->
 </body>
 </html>
